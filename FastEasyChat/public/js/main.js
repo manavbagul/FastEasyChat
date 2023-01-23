@@ -111,3 +111,15 @@ function addThere(msg) {
     scroll();
   }
 }
+
+var shareButton = document.getElementById("share");
+
+shareButton.addEventListener("click", async () => {
+  try {
+    await navigator.share({ title: "FastEasyChat", url: "https://fasteasychat.onrender.com/" });
+      alert("Shared!");
+  } catch (err) {
+    console.error("Share failed:", err.message);
+    alert("Not Shared :(");
+  }
+});
