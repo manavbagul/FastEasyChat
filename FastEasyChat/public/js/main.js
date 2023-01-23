@@ -9,7 +9,7 @@ var sendAudio = new Audio('/api/audio/send');
 var receiveAudio = new Audio('/api/audio/receive');
 
 
-var socket = io('127.0.0.1:3334', { transports : ['websocket'] });
+var socket = io('https://fasteasychat.onrender.com/', { transports : ['websocket'] });
 var form = document.getElementById('form');
 var input = document.getElementById('input');
 var scroll = () => document.getElementsByClassName("card-body")[0].scrollTo(0, document.getElementsByClassName("card-body")[0].scrollHeight);
