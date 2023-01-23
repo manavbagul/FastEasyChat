@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MAS Revolution</title>
+  <link rel="stylesheet" href="/css/master.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <section id="interface" class="overflow-hidden" style="background-color: #eee ; height: 100vh">
+    <div class="container py-3">
+
+      <div id="chit-chat" class="card overflow-hidden" style="height: 80vh">
+        <div class="card-header d-flex flex-row justify-content-between align-items-center p3">
+          <h1 class="mb-0 d-inline">MAS</h1>
+          <button class="btn btn-primary" type="button">Share</button>
+        </div>
+        <div class="card-body overflow-auto">
+          <div class="d-flex justify-content-center ">
+            <div class="divider d-flex align-items-center mb-4">
+              <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Today<br><span id="time">00:06</span></p>
+              <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="h-25 card-footer text-muted align-items-center p-3" style="height: 20vh">
+        <form id="form" class="d-flex ">
+          <input type="text" class="form-control form-control-lg" value="abs" id="input" placeholder="Type a message" autocomplete="off" autofocus>
+          <button class="btn btn-primary btn-big m-3" type="submit"><span class="display-6 fas fa-paper-plane"></span></button>
+        </form>
+        <footer class="text-center">
+          <span class="text-muted">©2022</span>
+          <a class="text-decoration-none" href="http://evening-tor-18134.herokuapp.com/" target="_blank" rel="noopener">MAS Revolution</a>
+          <span>&mdash;</span>
+          <a class="text-decoration-none" href="https://github.com/manavbagul" target="_blank" rel="noopener">@manavbagul</a>
+
+        </footer>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
