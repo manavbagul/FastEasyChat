@@ -112,7 +112,7 @@ function addThere(msg) {
   }
 }
 
-var shareButton = document.getElementById("share");
+var shareButton = document.getElementById("shareit");
 
 shareButton.addEventListener("click", async () => {
   try {
