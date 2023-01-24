@@ -7,6 +7,7 @@ const {
 } = require("socket.io")
 const io = new Server(server);
 const port = process.env.PORT || 3334;
+let users = 0;
 
 app.use(express.static(__dirname + '/FastEasyChat/public/'));
 app.get('/', (req, res) => {
@@ -29,8 +30,12 @@ app.get('/api/abstract/file', (req, res) => {
   res.sendFile(__dirname + '/FastEasyChat/public/doc/Abstract.pdf');
 });
 
+app.get('/api/users', (req, res) => {
+  res.send(users.toString());
+});
 
 io.on('connection', (socket) => {
+  users++;
   console.log('A user connected ' + socket.id);
 
   socket.on('chat message', (msg) => {
@@ -39,6 +44,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
+    users--;
     console.log('user disconnect');
   })
 });

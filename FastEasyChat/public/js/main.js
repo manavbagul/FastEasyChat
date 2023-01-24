@@ -8,7 +8,8 @@ console.log('js connected');
 var sendAudio = new Audio('/api/audio/send');
 var receiveAudio = new Audio('/api/audio/receive');
 
-
+//for local testing
+//var socket = io('127.0.0.1:3334', { transports : ['websocket'] });
 var socket = io('https://fasteasychat.onrender.com/', { transports : ['websocket'] });
 var form = document.getElementById('form');
 var input = document.getElementById('input');
@@ -123,3 +124,22 @@ shareButton.addEventListener("click", async () => {
     alert("Not Shared :(");
   }
 });
+
+function countChange()
+{
+  document.getElementById("count").textContent = httpGet('/api/users');
+}
+
+
+//get response from url
+function httpGet(url)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+
+}
+
+//to change online count
+setInterval(countChange,500);
