@@ -8,9 +8,15 @@ console.log('js connected');
 var sendAudio = new Audio('/api/audio/send');
 var receiveAudio = new Audio('/api/audio/receive');
 
-//for local testing
-//var socket = io('127.0.0.1:3334', { transports : ['websocket'] });
-var socket = io('https://fasteasychat.onrender.com/', { transports : ['websocket'] });
+let uUsername = window.localStorage.getItem("username");
+let uPassword = window.localStorage.getItem("password");
+
+var socket = io({ 
+  extraHeaders:{
+    username: uUsername,
+    password: uPassword
+} });
+ 
 var form = document.getElementById('form');
 var input = document.getElementById('input');
 var scroll = () => document.getElementsByClassName("card-body")[0].scrollTo(0, document.getElementsByClassName("card-body")[0].scrollHeight);
