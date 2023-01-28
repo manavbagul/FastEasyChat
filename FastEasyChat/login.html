@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="xqknuzj idc0_345" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Manav Bagul">
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/signin.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/img/favicon_login.ico" type="image/x-icon">
+  </head>
+  
+  <body class="text-center search_plugin_added">
+    <form action="/api/login" class="form-signin" method="post">
+      <img class="mb-4" src="https://via.placeholder.com/72" alt="brand logo">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" id="username" class="form-control" name="username" value="test1" placeholder="Username" required autofocus>
+
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" name="password" value="pass1" placeholder="Password" required>
+
+      <button class="btn btn-lg btn-secondary btn-block" type="submit" onclick="auth()">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© 2022-2023</p>
+    </form>
+    <script>
+      function auth(){  
+        window.localStorage.setItem("username", document.getElementById("username").value);
+        window.localStorage.setItem("password",document.getElementById("password").value);
+      }
+      
+    </script>
+  </body>
+</html>
